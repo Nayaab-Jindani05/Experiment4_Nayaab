@@ -9,29 +9,21 @@
     <p id="demo"><h1>JavaScript Class Example</h1></p>
     <p id="demo-arrow">Arrow Function Example</p>
     <script>
-        // Define the Person class
         class Person {
-            // Constructor method to initialize the instance
             constructor(name, age, address) {
                 this.name = name;
                 this.age = age;
                 this.address = address;
             }
 
-
-
-            // Arrow function as a method to get details
             getDetailsArrow = () => {
                 return `Name: ${this.name}, Age: ${this.age}, Address: ${this.address}`;
             }
         }
 
-        // Create an instance of the Person class
-        const person = new Person('Nayaab Jindani', 20,'Thane');
+        const person = new Person('Nayaab Jindani', 20, 'Thane');
 
-        // Print the details using the arrow function method
-        document.getElementById("demo-arrow").innerHTML = person.getDetailsArrow(); // Output: Name: John Doe, Age: 30
-
+        document.getElementById("demo-arrow").innerHTML = person.getDetailsArrow();
     </script>
 </body>
 </html>
