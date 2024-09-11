@@ -29,25 +29,20 @@ class Student extends Person {
     this.course = course;
   }
 
-  // Override the printDetails method
   printDetails() {
-    // Call the parent class's printDetails method
     const parentDetails = super.printDetails();
-    // Extend or modify the behavior
     return parentDetails + "<br> College Name: " + this.clgname + "<br> Year: " + this.year + "<br> Course: " + this.course;
   }
 
   printClgDetails() {
-    return this.printDetails(); // Use the overridden method
+    return this.printDetails();
   }
 }
 
 try {
-  // Try to create a Student object with a valid year
   const s = new Student("Nayaab", 20, "VESIT", 3, "IT");
   document.getElementById("demo").innerHTML = s.printClgDetails();
 } catch (error) {
-  // Handle the error if the year is invalid
   document.getElementById("demo").innerHTML = "Error: " + error.message;
 }
 </script>
