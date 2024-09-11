@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Inheritance Example in JavaScript</h1>
+<p id="demo"></p>
+
+<script>
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  printDetails() {
+    return "Name: " + this.name + "<br> Age: " + this.age;
+  }
+}
+
+class Student extends Person {
+  constructor(name, age, clg_name, year, course) {
+    super(name, age);
+
+    if (year <= 0 || year > 4) {
+      throw new Error("Invalid year is entered");
+    }
+    this.clgname = clg_name;
+    this.year = year;
+    this.course = course;
+  }
+
+  // Override the printDetails method
+  printDetails() {
+    // Call the parent class's printDetails method
+    const parentDetails = super.printDetails();
+    // Extend or modify the behavior
+    return parentDetails + "<br> College Name: " + this.clgname + "<br> Year: " + this.year + "<br> Course: " + this.course;
+  }
+
+  printClgDetails() {
+    return this.printDetails(); // Use the overridden method
+  }
+}
+
+try {
+  // Try to create a Student object with a valid year
+  const s = new Student("Nayaab", 20, "VESIT", 3, "IT");
+  document.getElementById("demo").innerHTML = s.printClgDetails();
+} catch (error) {
+  // Handle the error if the year is invalid
+  document.getElementById("demo").innerHTML = "Error: " + error.message;
+}
+</script>
+
+</body>
+</html>
